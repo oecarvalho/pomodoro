@@ -47,16 +47,37 @@ header ul li a.active{
     margin-top: 200px;
 }
 
-.temporizador svg{
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke-width: 12px;
-    stroke:#383838 ;
-    
+.circulo{
+    transform: rotate(270deg);
+    overflow:visible;
 }
 
+circle{
+    fill: none;
+    stroke: #383838;
+    stroke-width: .75rem;
+}
+
+circle:nth-child(1){
+    stroke-dashoffset: 0;
+}
+circle:nth-child(2) {
+    stroke: #7B38E8;
+    stroke-dasharray: 1131; /* Comprimento total do traço */
+    stroke-dashoffset: 1131; /*se for = 0. estará todo desenhado*/
+    animation: dash 2s linear forwards; 
+    filter: drop-shadow(0px 0px 12px #7B38E8);
+}
+
+/* @keyframes dash {
+    to {
+        stroke-dashoffset: 0; 
+    }
+} */
+
+
 .temporizador h1{
+    position: absolute;
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: "Chakra Petch", sans-serif;
@@ -68,33 +89,6 @@ header ul li a.active{
     position: absolute;
 }
 
-.temporizador svg circle{
-    stroke: #7B38E8 ;
-    filter: drop-shadow(0px 0px 12px #7B38E8);
-}
-
-.temporizador .dots{
-    position: absolute;
-    background: #7B38E8;
-    box-shadow: 0px 0px 0px 0px #7B38E8;
-    width: 3%;
-    height: 3%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    z-index: 100;
-    border-radius: 50%;
-    top: -1.5%;
-    left: auto;
-}
-
-.temporizador .dots::before{
-    content: '';
-    position: absolute;
-    
-    width: 15px;
-    height: 15px;
-}
 
 .controle{
     margin-bottom: 84px;
