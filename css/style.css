@@ -1,5 +1,9 @@
 @import '/css/reset.css';
 
+[data-contexto = 'foco']{
+    --cor: #777;
+}
+
 .container{
     width: 100%;
     max-width: 600px;
@@ -69,11 +73,11 @@ circle:nth-child(2) {
     filter: drop-shadow(0px 0px 12px #7B38E8);
 }
 
-/* @keyframes dash {
+@keyframes dash {
     to {
         stroke-dashoffset: 0; 
     }
-} */
+}
 
 
 .temporizador h1{
