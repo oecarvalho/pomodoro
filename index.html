@@ -16,10 +16,10 @@
             <p>Estudar design e fazer um pomodoro</p>
         </div>
 
-        <ul>
-            <li><a href="#" class="active">Foco</a></li>
-            <li><a href="#">Descanso Curto</a></li>
-            <li><a href="#">Descanso Longo</a></li>
+        <ul id="menu-top">
+            <li><a href="#" class="active foco" >Foco</a></li>
+            <li><a href="#" class="short">Descanso Curto</a></li>
+            <li><a href="#" class="longo">Descanso Longo</a></li>
         </ul>
     </header>
 
@@ -27,8 +27,8 @@
         <div class="temporizador">
             <div class="circulo">
                 <svg style="width: 400px; height: 400px; overflow: visible;">
-                    <circle cx="50%" cy="50%" r="180"></circle>
-                    <circle cx="50%" cy="50%" r="180"></circle>
+                    <circle cx="50%" cy="50%" r="180" ></circle>
+                    <circle id="cor-circulo" cx="50%" cy="50%" r="180" ></circle>
                 </svg>
             </div>
             <h1 class="tempo">25:00</h1>
@@ -39,5 +39,7 @@
             <li><a href="#" class="button"><i class="icon-complete"></i>Concluir</a></li>
         </ul>
     </main>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

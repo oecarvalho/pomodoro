@@ -1,7 +1,18 @@
 @import '/css/reset.css';
 
-[data-contexto = 'foco']{
-    --cor: #777;
+circle:nth-child(2)[data-contexto = 'foco']{
+   stroke: #7B38E8;
+   filter: drop-shadow(0px 0px 12px #7B38E8);
+}
+
+circle:nth-child(2)[data-contexto = 'short']{
+   stroke: #387EE8;
+   filter: drop-shadow(0px 0px 12px #387EE8);
+}
+
+circle:nth-child(2)[data-contexto = 'longo']{
+   stroke: #38E874;
+   filter: drop-shadow(0px 0px 12px #38E874);
 }
 
 .container{
@@ -12,7 +23,7 @@
 }
 
 .titulos{
-    margin-top: 134px;
+    margin-top: 40px;
 }
 
 header .sb-titulo{
@@ -48,7 +59,7 @@ header ul li a.active{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 80px;
 }
 
 .circulo{
@@ -65,6 +76,7 @@ circle{
 circle:nth-child(1){
     stroke-dashoffset: 0;
 }
+
 circle:nth-child(2) {
     stroke: #7B38E8;
     stroke-dasharray: 1131; /* Comprimento total do traço */
@@ -102,7 +114,7 @@ ul.controle{
     display: flex;
     justify-content: center;
     gap: 80px;
-    margin-top: 200px;
+    margin-top: 60px;
 }
 
 .button{
