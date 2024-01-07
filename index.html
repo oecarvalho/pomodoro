@@ -17,7 +17,7 @@
         </div>
 
         <ul id="menu-top">
-            <li><a href="#" class=" foco" >Foco</a></li>
+            <li ><a href="#" class="foco active">Foco</a></li>
             <li><a href="#" class="short">Descanso Curto</a></li>
             <li><a href="#" class="longo">Descanso Longo</a></li>
         </ul>
@@ -31,12 +31,15 @@
                     <circle id="cor-circulo" cx="50%" cy="50%" r="180" ></circle>
                 </svg>
             </div>
-            <h1 class="tempo">25:00</h1>
+            <div id="timer">
+                <h1 class="tempo">25:00</h1>
+            </div>
+            
         </div>
 
         <ul class="controle">
-            <li><a href="#" class="button"><i class="icon-play"></i> Iniciar</a></li>
-            <li><a href="#" class="button"><i class="icon-complete"></i>Concluir</a></li>
+            <li  id="play-pause"><a href="#" class="button"><img id="icone" src="/assets/play.png" alt="">Iniciar</a></li>
+            <li><a href="#" class="button"><img src="/assets/confirmar.png" alt="">Concluir</a></li>
         </ul>
     </main>
 
