@@ -4,22 +4,17 @@ const btnLongo = document.querySelector('.longo');
 const circulo = document.getElementById('cor-circulo');
 const playPause = document.getElementById('play-pause');
 const timer = document.getElementById('timer');
-
 let tempoEmSegundos = 1500;
 let intervalo = null;
 let tempoPausado = null;
 let started = false;
-
 let segundosReais = 1500;
 let valorDesejado = 1131;
-
 let proporcao = valorDesejado / segundosReais;
-
 const valorInicial = 283; // Porcentagem inicial para os botões
 
-
-function atualizarCirculo(milissegundosRestantes) {
-  let valorCirculo = valorInicial - (milissegundosRestantes / segundosReais) * valorInicial;
+function atualizarCirculo(segundosRestantes) {
+  let valorCirculo = valorInicial - (segundosRestantes / segundosReais) * valorInicial;
 
   if (tempoEmSegundos <= 0) {
     valorCirculo = valorInicial;
@@ -82,7 +77,6 @@ btnFoco.addEventListener('click', () => {
     if (!started) {
         tempoEmSegundos = 1500;
         segundosReais = 1500;
-        let valorDesejado = 1131;
         circulo.setAttribute('data-contexto', 'foco');
         
 
