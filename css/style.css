@@ -10,6 +10,26 @@ main .modal-bg{
     background-color: #d6d2d2;
 }
 
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+button img{
+    margin-right: 6px;
+}
+
 circle:nth-child(2)[data-contexto = 'foco']{
    stroke: #7B38E8;
    filter: drop-shadow(0px 0px 12px #7B38E8);

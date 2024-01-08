@@ -45,7 +45,7 @@
         <div class="list">
             <h4 class="sb-titulo">TAREFA ATUAL</h4>
 
-            <ul>
+            <ul class="lista-de-tarefas">
                 <li>
                     <p>Estudar Design e fazer um pomodoro</p>
                     <div class="action-list">
@@ -88,8 +88,8 @@
                         <a href="#" class="play-tarefa">
                             <img src="/assets/play.png" alt="">
                         </a>
-                        <a href="#">
-                            <img class="cancelarTarefa" src="/assets/lixeira.png" alt="">
+                        <a href="#" class="cancelarTarefa">
+                            <img  src="/assets/lixeira.png" alt="">
                         </a>
                     </div>
                 </li>
@@ -104,14 +104,16 @@
 
     <div class="modal hidden">
         <div class="modal-content">
-            <div class="tarefa-info">
-                <label class="sb-titulo">TAREFA ATUAL</label>
-                <input type="text" placeholder="Escreva uma tarefa">
-            </div>
-            <div class="btn-modal">
-                <a id="btnCancelarModal" href="#">Cancelar</a>
-                <a href="#" class="button"><img src="/assets/confirmar.png" alt="">Salvar</a>
-            </div>
+            <form class="formTarefa">
+                <div class="tarefa-info">
+                    <label class="sb-titulo">TAREFA ATUAL</label>
+                    <input class="inputSubmit" type="text" placeholder="Escreva uma tarefa">
+                </div>
+                <div class="btn-modal">
+                    <a id="btnCancelarModal" href="#">Cancelar</a>
+                    <button href="#" class="button"><img src="/assets/confirmar.png" alt="">Salvar</button>
+                </div>
+            </form>
         </div>
     </div>
 
