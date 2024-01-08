@@ -23,7 +23,7 @@
         </ul>
     </header>
 
-    <main class="container">
+    <main class="container modal-bg">
         <div class="temporizador">
             <div class="circulo">
                 <svg style="width: 400px; height: 400px; overflow: visible;">
@@ -94,26 +94,26 @@
                     </div>
                 </li>
             </ul>
-
+            
            
         </div>
         <div class="botao-tarefa">
             <a href="#" id="btnTarefa" class="button"><img src="/assets/plus.png" alt="">Adicionar Tarefa</a>
         </div>
+    </main>
 
-        <div class="modal-tarefa">
+    <div class="modal hidden">
+        <div class="modal-content">
             <div class="tarefa-info">
                 <label class="sb-titulo">TAREFA ATUAL</label>
-                <input type="text">
+                <input type="text" placeholder="Escreva uma tarefa">
             </div>
             <div class="btn-modal">
-                <a href="#">Cancelar</a>
+                <a id="btnCancelarModal" href="#">Cancelar</a>
                 <a href="#" class="button"><img src="/assets/confirmar.png" alt="">Salvar</a>
             </div>
         </div>
-    </main>
-
-    
+    </div>
 
     <script src="/js/main.js"></script>
     <script src="/js/todo-crud.js"></script>

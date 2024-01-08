@@ -1,7 +1,13 @@
 const btnTarefa = document.querySelector('#btnTarefa');
-const listaDeTarefas = document.querySelector('.list');
+const modalTarefas = document.querySelector('.modal');
+const cancelarTarefaNoModal = document.querySelector('#btnCancelarModal')
+
 
 btnTarefa.addEventListener('click', (event)=>{
     console.log(event.target);
-    listaDeTarefas.classList.toggle('hidden')
+    modalTarefas.classList.toggle('hidden');
+})
+
+cancelarTarefaNoModal.addEventListener('click', (event)=>{
+    modalTarefas.classList.toggle('hidden');
 })

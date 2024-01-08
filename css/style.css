@@ -1,5 +1,15 @@
 @import '/css/reset.css';
 
+main{
+    position: relative;
+}
+
+main .modal-bg{
+    width: 100%;
+    height: 100%;
+    background-color: #d6d2d2;
+}
+
 circle:nth-child(2)[data-contexto = 'foco']{
    stroke: #7B38E8;
    filter: drop-shadow(0px 0px 12px #7B38E8);
@@ -200,7 +210,7 @@ a.button{
     height: 100%; */
 }
 
-.list.hidden{
+.modal.hidden{
     display: none;
 }
 
@@ -209,14 +219,32 @@ a.button{
     gap: 10px;
 }
 
-.modal-tarefa{
+.modal{
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    justify-content: center;
+    width: 100%;
+    height: 100vw;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+}
+
+.modal.hidden{
+    display: none;
+}
+
+.modal-content{
     padding: 16px;
+    background: #2D2D2D;
+    justify-content: center;
+    width: 400px;
     border-radius: 6px;
-    background: #3f3f3f;
+    left: 40%;
+    top: 25%;
+    position: absolute;
 }
 
 .tarefa-info{
@@ -231,6 +259,7 @@ a.button{
     height: 45px;
     border-radius: 6px;
     border: 1px solid #383838;
+    padding: 6px;
 }
 
 .btn-modal{
@@ -238,4 +267,6 @@ a.button{
     justify-content: end;
     gap: 16px;
     align-items: center;
+    
 }
+
