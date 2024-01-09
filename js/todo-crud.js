@@ -1,6 +1,6 @@
 const btnTarefa = document.querySelector('#btnTarefa');
 const modalTarefas = document.querySelector('.modal');
-const cancelarTarefaNoModal = document.querySelector('#btnCancelarModal')
+const cancelarTarefaNoModal = document.querySelector('#btnCancelarModal');
 const btnExcluirTarefa = document.querySelectorAll('.cancelarTarefa');
 const formularioNovaTarefa = document.querySelector('.formTarefa');
 const inputNovaTarefa = document.querySelector('.inputSubmit');
@@ -10,9 +10,8 @@ const listaDeNovasTarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
 
 function adicionarTarefaNaTela(tarefa) {
     const li = document.createElement('li');
-
     const tarefaNaLista = document.createElement('p');
-    tarefaNaLista.textContent = tarefa.descricao; // Corrigido para usar a descrição da tarefa
+    tarefaNaLista.textContent = tarefa.descricao;
 
     const divButtons = document.createElement('div');
     divButtons.classList.add('action-list');
@@ -21,52 +20,48 @@ function adicionarTarefaNaTela(tarefa) {
     const imgPlay = document.createElement('img');
     botaoIniciarTarefa.classList.add('play-tarefa');
     imgPlay.setAttribute('src', '/assets/play.png');
+    botaoIniciarTarefa.appendChild(imgPlay);
+    divButtons.appendChild(botaoIniciarTarefa);
 
     const botaoExcluirTarefa = document.createElement('a');
     const imgLixeira = document.createElement('img');
     botaoExcluirTarefa.classList.add('cancelarTarefa');
     imgLixeira.setAttribute('src', '/assets/lixeira.png');
+    botaoExcluirTarefa.appendChild(imgLixeira);
+    divButtons.appendChild(botaoExcluirTarefa);
 
-    botaoIniciarTarefa.appendChild(imgPlay); // Corrigido para usar appendChild
-    botaoExcluirTarefa.appendChild(imgLixeira); // Corrigido para usar appendChild
-    divButtons.appendChild(botaoIniciarTarefa); // Corrigido para usar appendChild
-    divButtons.appendChild(botaoExcluirTarefa); // Corrigido para usar appendChild
     li.appendChild(tarefaNaLista);
     li.appendChild(divButtons);
 
-    return (li)
+    return li;
 }
 
-/*Abrindo o modal quando clicado no botão de add tarefa*/
-btnTarefa.addEventListener('click', (event)=>{
+btnTarefa.addEventListener('click', () => {
     modalTarefas.classList.toggle('hidden');
-})
+});
 
-/*Fechando o modal quando clicado no botão cancelar*/
-cancelarTarefaNoModal.addEventListener('click', ()=>{
+cancelarTarefaNoModal.addEventListener('click', () => {
     modalTarefas.classList.toggle('hidden');
-})
+});
 
-/*Excluindo tarefa quando o usuário clica no icone de lixeira*/
-btnExcluirTarefa.forEach((botaoSelecionado)=>{
-    botaoSelecionado.addEventListener('click', (event)=>{
-        event.preventDefault()
+btnExcluirTarefa.forEach((botaoSelecionado) => {
+    botaoSelecionado.addEventListener('click', (event) => {
+        event.preventDefault();
         botaoSelecionado.closest('li').remove();
-    })
-})
+    });
+});
 
-formularioNovaTarefa.addEventListener('submit', (evento)=>{
-    evento.preventDefault();
+formularioNovaTarefa.addEventListener('submit', (evento) => {
     const tarefa = {
         descricao: inputNovaTarefa.value
-    }
+    };
 
     listaDeNovasTarefas.push(tarefa);
     localStorage.setItem('tarefas', JSON.stringify(listaDeNovasTarefas));
-})
+    modalTarefas.classList.add('hidden');
+});
 
-listaDeNovasTarefas.forEach(tarefa =>{
+listaDeNovasTarefas.forEach((tarefa) => {
     const elementoTarefa = adicionarTarefaNaTela(tarefa);
-
-    ulTarefas.append(elementoTarefa);
-})
+    ulTarefas.appendChild(elementoTarefa); // Changed append to appendChild
+});
