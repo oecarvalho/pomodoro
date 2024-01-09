@@ -37,8 +37,8 @@ function mostrarTempo() {
 
 const contagemRegressiva = () => {
     if (tempoEmSegundos <= 0) {
-        zerar();
         alert('Tempo de foco encerrado!');
+        zerar();
         return;
     }
     tempoEmSegundos -= 1;

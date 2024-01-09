@@ -82,7 +82,10 @@ header ul li a.active{
     padding: 10px 16px;
 }
 
-
+.tarefa-destaque{
+    padding: 10px 20px;
+    background: #393939;
+}
 
 .temporizador{
     position: relative;
