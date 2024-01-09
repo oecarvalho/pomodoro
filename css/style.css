@@ -9,7 +9,9 @@ main .modal-bg{
     height: 100%;
     background-color: #d6d2d2;
 }
-
+a{
+    cursor: pointer;
+}
 button {
     border: none;
     margin: 0;
@@ -153,8 +155,9 @@ circle:nth-child(2) {
 ul.controle{
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 60px;
     margin-top: 60px;
+    align-items: center;
 }
 
 .button{
@@ -188,6 +191,7 @@ a.button{
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .botao-tarefa .button{

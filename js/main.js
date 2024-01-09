@@ -4,6 +4,7 @@ const btnLongo = document.querySelector('.longo');
 const circulo = document.getElementById('cor-circulo');
 const playPause = document.getElementById('play-pause');
 const timer = document.getElementById('timer');
+const btnRestart = document.querySelector('.restart');
 let tempoEmSegundos = 1500;
 let intervalo = null;
 let tempoPausado = null;
@@ -12,6 +13,9 @@ let segundosReais = 1500;
 let valorDesejado = 1131;
 let proporcao = valorDesejado / segundosReais;
 const valorInicial = 283; // Porcentagem inicial para os botões
+
+
+
 
 function atualizarCirculo(segundosRestantes) {
   let valorCirculo = valorInicial - (segundosRestantes / segundosReais) * valorInicial;
@@ -68,9 +72,36 @@ const zerar = () => {
     playPause.innerHTML = '<li><a href="#" id="play-pause" class="button"><img id="icone" src="/assets/play.png" alt="">Iniciar</a></li>';
     started = false;
     intervalo = null;
-    tempoEmSegundos = 5;
+    // Chame a função para configurar o tempo com base no botão selecionado
+    configurarTempoSelecionado();
     tempoPausado = null;
     mostrarTempo();
+}
+
+btnFoco.addEventListener('click', () => {
+    if (!started) {
+        // ... (seu código existente)
+        mostrarTempo();
+        atualizarCirculo(tempoEmSegundos);
+        configurarTempoSelecionado(); // Adicione esta linha para configurar o tempo selecionado
+    }
+});
+
+const configurarTempoSelecionado = () => {
+    const btnAtivo = document.querySelector('.active');
+
+    if (btnAtivo) {
+        if (btnAtivo.classList.contains('foco')) {
+            tempoEmSegundos = 1500;
+            segundosReais = 1500;
+        } else if (btnAtivo.classList.contains('short')) {
+            tempoEmSegundos = 300;
+            segundosReais = 300;
+        } else if (btnAtivo.classList.contains('longo')) {
+            tempoEmSegundos = 900;
+            segundosReais = 900;
+        }
+    }
 }
 
 btnFoco.addEventListener('click', () => {
@@ -124,6 +155,13 @@ btnLongo.addEventListener('click', () => {
         atualizarCirculo(tempoEmSegundos);
     }
 });
+
+
+const reiniciarContador = () => {
+    zerar();
+}
+
+btnRestart.addEventListener('click', reiniciarContador);
 
 playPause.addEventListener('click', iniciarPausar);
 
