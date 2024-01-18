@@ -77,11 +77,15 @@ header ul{
     margin-top: 50px;
 }
 
+header ul li a{
+    padding: 10px 16px;
+}
+
 header ul li a.active{
     border-radius: 6px;
     background: #383838;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 10px 16px;
+
 }
 
 .tarefa-destaque{
